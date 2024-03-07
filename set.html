@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,5 +25,92 @@
         });
 
     </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS styles */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .bg-header {
+            background-image: url('header-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-about {
+            background-color: #f3f4f6;
+        }
+        .bg-projects {
+            background-color: #e2e8f0;
+        }
+        .bg-contact {
+            background-color: #d1d5db;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <!-- Header / Home -->
+    <header class="text-center py-12 bg-header">
+        <h1 class="text-4xl font-bold mb-2 text-white">Your Name</h1>
+        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-img mx-auto">
+        <p class="text-xl text-white">Software Engineer</p>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-8 px-4 bg-about">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="text-lg text-gray-800">
+                Briefly introduce yourself here. You can talk about your passion for technology, 
+                your experience with software development, and what drives you as an engineer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Experience</h2>
+            <!-- Add experiences here -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-8 px-4 bg-projects">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4">Projects</h2>
+            <!-- Describe your projects here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-8 px-4 bg-contact">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+            <p>How to reach out to you.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-gray-800 text-center">
+        <p class="text-gray-400">© 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript can be added here for interactivity, if needed.
+    </script>
+
 </body>
 </html>
