@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="userDiv"></ul>
+    <script>
+        // const url="https://jsonplaceholder.typicode.com/users";
+       const url="https://jsonplaceholder.typicode.com/posts" ;
+        const showUser=async()=>
+        {
+            try{
+                const response=await fetch(url);
+                const json=await response.json();
+                json.map((element)=>
+                {
+                    // let li=document.createElement("li");
+                    //  li.innerHTML=element.name;
+                    // userDiv.append(li);
+                    let dv=document.createElement("div");
+               li.inneHTML=`${element.userId} - ${element.title} - ${element.body};
+               userDiv.append(dv);
+                })
+            }
+            catch(error)
+            {
+                console.log(error);
+            }
+        }
+        showUser();
+    </script>
+</body>
+</html>

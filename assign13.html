@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #quiz-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h2>Math Quiz</h2>
+        <div id="question"></div>
+        <input type="text" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Function to generate a random math quiz question
+        function generateQuestion() {
+            var num1 = Math.floor(Math.random() * 10) + 1;
+            var num2 = Math.floor(Math.random() * 10) + 1;
+            var operator = ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+            var question = num1 + " " + operator + " " + num2;
+            return {
+                question: question,
+                answer: eval(question)
+            };
+        }
+
+        // Function to display a new question
+        function displayQuestion() {
+            var quizContainer = document.getElementById("quiz-container");
+            var questionObject = generateQuestion();
+            document.getElementById("question").textContent = "What is " + questionObject.question + "?";
+            document.getElementById("answer").value = "";
+            document.getElementById("result").textContent = "";
+            return questionObject;
+        }
+
+        // Function to check the answer
+        function checkAnswer() {
+            var userAnswer = parseFloat(document.getElementById("answer").value);
+            var questionObject = displayQuestion();
+            var resultContainer = document.getElementById("result");
+            if (userAnswer === questionObject.answer) {
+                resultContainer.textContent = "Correct!";
+            } else {
+                resultContainer.textContent = "Incorrect. The correct answer was " + questionObject.answer;
+            }
+        }
+
+        // Display the first question when the page loads
+        displayQuestion();
+    </script>
+</body>
+</html>

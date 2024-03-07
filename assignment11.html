@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Counter</title>
+</head>
+<body>
+    <select id="productDropdown" onchange="handleSelection()">
+        <option value="">Select a Product</option>
+        <option value="Dell">DELL</option>
+        <option value="HP">Hp</option>
+    </select>
+
+    <div id="counterSection" style="display: none;">
+        <button onclick="updateCount(-1)">-</button>
+        <span id="count">0</span>
+        <button onclick="updateCount(1)">+</button>
+    </div>
+
+    <button onclick="submitCount()">Submit</button>
+    <input type="text" id="total" placeholder="Total" readonly>
+
+    <script>
+        const handleSelection = () => {
+            const selection = document.getElementById('productDropdown').value;
+            if (selection === "Dell" || selection === "HP") {
+                document.getElementById('counterSection').style.display = "block";
+            } else {
+                document.getElementById('counterSection').style.display = "none";
+            }
+        };
+
+        let count = 0;
+
+        const updateCount = (increment) => {
+            count += increment;
+            document.getElementById('count').innerText = count;
+        };
+
+        const submitCount = () => {
+            document.getElementById('total').value = count;
+        };
+    </script>
+</body>
+</html>

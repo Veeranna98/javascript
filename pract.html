@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main
+        {
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            width:100%;
+             flex-direction:row;
+        }
+        div .container
+        {
+        border: solid 2px blue;
+        height: 500px;
+        width: 600px;
+        padding: 10px;
+        margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My Coffee Shop</h1>
+    <h3>view cart</h3>
+    <hr>
+    <div id="products" class="main"></div>
+
+     <div><h1>mycart</h1></div>
+ 
+    <div id="mycart" ></div>
+    <div id="order" ></div> 
+
+    <script>
+     let product=[{
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"banana",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:35,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:36,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:38,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:38,
+         Image:"star2.jpeg",
+     },
+    ];
+    let cart=[
+        {
+        name:"apple",
+        discription:"this is for me",
+         price:38,
+         qty:5,
+
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+        price:38,
+        qty:6,
+     }
+     ];
+    let msg="";
+    let result=product.filter((value)=>{
+        return value.price>30;
+         })
+   result.forEach((value) => {
+        msg=msg+`<div class="container"> 
+        <div><img width=500px src=${value.Image}>=></div>
+        <div>${value.name}</div>
+        <div>${value.discription}</div>
+        <div>{value.price}</div>
+        <div><button>Add</button></div>
+        </div>`;
+     
+    });
+    products.innerHTML = msg;
+    let txt="";
+    cart.forEach((value)=>{
+        txt=txt +`<ul><li>{value.name}
+            ${value.price}
+            ${value.qty}
+            ${value.price* value.qty}</li></ul>`;
+        }
+    );
+    mycart.innerHTML=txt;
+    let total=cart.reduce((sum,value)=>{
+        return sum+value.price*value.qty;
+    })
+    order.innerHTML="order value: " +total;
+   
+    </script>
+</body>
+</html>
+    

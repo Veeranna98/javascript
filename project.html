@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main
+        {
+            display: flex;
+            flex-direction:row;
+            flex-wrap: wrap;
+            margin: auto;
+            width:100%;
+        }
+        div .container
+        {
+        border: solid 2px blue;
+        height: 500px;
+        width: 600px;
+        padding: 10px;
+        }
+      
+    </style>
+</head>
+<body>
+     
+        <h1 style="background-color: rgb(127, 255, 127);">My Coffe Shop</h1>
+            <p align ="right"><img src="add cart.png" height="100px" width="100px"></p></div>
+        <div id="products" class="main"></div>
+        <div><h2>my cart</h2></div>
+        <div class="list"></div>
+        
+    
+    <script>
+        
+      
+      
+     let product=[{
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"banana",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+     {
+        name:"apple",
+        discription:"this is for me",
+         price:33,
+         Image:"star2.jpeg",
+     },
+    ];
+     let listCards=[];
+   function addToCard(key){
+                    if(listCards[key]==null){
+                        listCards[key]=product[key];
+                        // listCards[key]= products[key];
+                        // listCards[key]=JSON.parse(JSON.stringify(products[key]));
+                        // listCards[key].id=product[key].id;
+                        listCards[key].quntity=1;
+                    }
+                    else{
+                        listCards[key].quntity=listCards[key].quntity+1;
+
+                    }
+                    reloadCard();
+                    console.log(listCards);
+                    
+                    }
+    function reloadCard(){
+                        listCards.innerHTML="";
+                        listCards.forEach((value,key) =>
+                        {
+                            if(value!=null)
+                            {
+                              let newDiv=document.createElement("listCards");
+                               newDiv.innerHTML=`
+                              <div><img src=image/${value.image}''/></div>
+                              <div>${value.name}</div>
+                              <div>${value.price.toLocaleString()}</div>
+                              <div>
+                                <button onclick="changeQuantity(${key},${
+                                    value.quntity-1
+                                })">-</button>
+
+                                <div class="count">${value.quantity}</div>
+                                <button onclick="changeQuantity(${key},${
+                                    value.quntity+1
+                            })">+</button>
+                                       </div>`;
+                                       list.appendChild(newDiv);
+                                    }
+                                })
+                                
+                            };
+                            function changeQuantity(key, quantity) {
+    if(quantity == 0) {
+        delete cart[key];
+    } else{
+        cart[key].quantity = quantity;
+        cart[key].price = quantity * product[key].price;
+    }
+    reloadcart();
+}
+    let msg="";
+    product.forEach((value,key) => {
+        msg=msg+  `<div class="container"> 
+        <div><img width=500px src=${value.Image}>=></div>
+        <div>${value.name}</div>
+        <div>${value.discription}</div>
+        <div>${value.price}</div>
+        <h3 id="numberDisplay">0</h3>
+        <button id="${key}" onClick="addToCard(${key})">ADD</button>
+    
+    
+        </div>`;
+        
+    });
+   
+    products.innerHTML = msg;
+    </script>
+</body>
+</html>

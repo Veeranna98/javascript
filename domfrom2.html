@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <p><input type="radio" names="fruit"  value="apple">Apple</p>
+        <p><input type="radio" name="fruit" value="apple">Mango</p>
+        <p><input type="radio" name="fruit" value="apple">gova</p>
+        <p><input type="radio" name="fruitbv" value="apple">chery</p>
+        <input type="button" onclick="dsp()" value="submit"></input>
+     </form>
+     <hr>
+     <div id="d"></div>
+     <script>
+        const dsp=()=>
+        {
+            let fruits=document.forms[0];
+            let txt="";
+            let i;
+            for(i=0;i<fruits.length;i++)
+            {
+                if(fruits[i].checked)
+                {
+                    txt=txt+fruits[i].value+" ";
+                }
+            }
+            d.innerHTML=txt
+        }
+     </script>
+</body>
+</html>

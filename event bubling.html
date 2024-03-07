@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sales Report</h1>
+    <p>Vehicle<label id="v"></label></p>
+    <p>Car<label id="c"></label></p>
+    <p>Brand<label id="b"></label></p>
+    <hr>
+    <div id="Vehicle" onclick="fv()">
+        sell a Vehicle 
+        <div id="Car" onclick="fc()">sell a Car</div>
+        <div id="ford" onclick="fb()">  sell a ford </div>      
+    </div>
+    <div id="dImage"></div>
+    <script>
+      
+        let vNum=0;
+        let cNum=0;
+        let bNum=0;
+
+        const fv=()=>
+        {
+            alert("sold a vehicle")
+            vNum +=1;
+            v.innerHTML=vNum;
+        }
+        const fc=()=>
+        {
+            alert("sold a car ")
+            cNum +=1;
+            c.innerHTML=cNum;
+        }
+        const fb=()=>
+        {
+            alert("sold a brand")
+            bNum +=1;
+            b.innerHTML=bNum;
+        }        
+    </script>
+</body>
+</html>

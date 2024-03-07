@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Print Good Morning, Afternoon, or Good Evening based on the current time
+const currentTime = new Date().getHours();
+let greeting;
+
+if (currentTime < 12) {
+    greeting = "Good Morning";
+} else if (currentTime < 18) {
+    greeting = "Good Afternoon";
+} else {
+    greeting = "Good Evening";
+}
+
+console.log("1. " + greeting);
+
+// 2. Print a Math addition question paper which changes every time you run the program
+const num1 = Math.floor(Math.random() * 100); // Generate random number between 0 and 100
+const num2 = Math.floor(Math.random() * 100);
+const answer = num1 + num2;
+
+console.log("2. Math Addition Question Paper:");
+console.log(`   What is the sum of ${num1} and ${num2}?`);
+
+// 3. Store DOB of employee and print years left for retirement if retirement age is 60
+const employeeDOB = new Date("1980-01-01"); // Example DOB
+const currentYear = new Date().getFullYear();
+const retirementAge = 60;
+const yearsLeft = retirementAge - (currentYear - employeeDOB.getFullYear());
+
+console.log("3. Years left for retirement:", yearsLeft < 0 ? "Already retired" : yearsLeft);
+
+    </script>
+</body>
+</html>

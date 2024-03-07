@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: row;
+        }
+        #main{
+            height: 700px;
+            width: 300px;
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <h1>My application</h1>
+    <hr>
+    <div id="container">
+        <div id="main"></div>
+        <div id =sub></div>
+    </div>
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/comments";
+        const showUsers = async () =>{
+                try{
+                const response = await fetch(url);
+                const json = await response.json();
+              
+                json.map((element) =>{
+                    if(num==element.id)
+                    {
+                    let li = document.createElement("p");
+                    li.innerHTML = `<p onclick='showComments(${element.postId})'>${element.name}.${element.body}.${element.email}</p>`;
+                    main.append(li);
+                    }
+                });
+            } catch(error){
+                console.log(error);
+            }
+        };
+
+        showUsers();
+
+        const showComments = async(postId) =>{
+    
+        const url=`https://jsonplaceholder.typicode.com/comments/?postId=${postId}`;
+            try{
+                const response = await fetch(url);
+                const json = await response.json();
+                let str =`<h2>Posts of user ID: ${postId}</h2>`
+                json.map((value) =>{
+                    str+= `<p><b>id:</b>${value.id}<br><b>name:</b>${value.name}<br>email:<br>${value.email}<br>body:<br>${value.body}<hr></p>`;
+                    console.log(str);
+                     
+                    sub.innerHTML= str;
+                });
+            } catch(error){
+                console.log(error);
+            }
+        };
+       showComments();
+    </script>
+</body>
+</html>

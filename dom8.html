@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input type="text" name="student" id="t1" placeholder="Enter Name"></p>
+    <p><input type="text" name="student" id="t2" placeholder="Enter Name"></p>
+    <p><input type="text" name="student" id="t3" placeholder="Enter Name"></p>
+    <button onclick="dsp()">submit</button>
+    <hr>
+
+    <div id="d"></div>
+    <script>
+        const dsp=() =>{
+            let name=document.getElementsByTagName("input")
+            let str=""
+            for(let i=0;i<name.length;i++)
+            {
+                str=str+name[i].value
+            }
+            d.innerHTML=str
+        };
+    </script>
+</body>
+</html>

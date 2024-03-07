@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let name="hari";
+        // name=name.charAt(0).toUpperCase()+name.slice(0)
+        // console.log(name)
+       let calc=function(a)
+       {
+           
+        this.i=a;
+        
+        this.add=function(b)
+        {
+            this.i=this.i+b;
+            return this;
+
+        }
+        this.subtract=function(c)
+        {
+            this.i=this.i-c;
+            return this;
+        }
+        this.print=function()
+        {
+            console.log(this.i);
+        }
+
+       }
+       
+    let c=new calc(7)
+    c.add(20).subtract(8).print();
+    console.log(c)
+    </script>
+</body>
+</html>

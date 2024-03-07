@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let marks = [
+    { subject: "Maths", marks: 45 },
+    { subject: "Science", marks: 90 },
+    { subject: "English", marks: 15 },
+    { subject: "EVS", marks: 55 }
+];
+// 1. Print all subjects along with marks
+console.log(" All subjects along with marks:");
+marks.forEach(item => console.log(`${item.subject}: ${item.marks}`));
+
+// 2. Print subjects where marks > 29
+console.log(" Subjects where marks > 29:");
+marks.forEach(item => {
+    if (item.marks > 29) {
+        console.log(item.subject);
+    }
+});
+
+// 3. Print total marks of the student
+let totalMarks = marks.reduce((total, item) => total + item.marks, 0);
+console.log(" Total marks of the student:", totalMarks);
+
+// 4. Add grace mark 10 if marks is less than 20 and print all marks
+console.log(" Marks after adding grace mark 10 if marks is less than 20:");
+marks.forEach(item => {
+    if (item.marks < 20) {
+        item.marks += 10;
+    }
+    console.log(`${item.subject}: ${item.marks}`);
+});
+
+    </script>
+</body>
+</html>

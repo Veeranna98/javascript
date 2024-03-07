@@ -1,0 +1,36 @@
+
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="dImage"></div>
+        <script>
+            let products = [
+        {
+           id:1,
+           image:"rice.jpg",      
+        },
+        {
+            id:2,
+           image:"carrot.jpg",
+        },
+        
+        {
+            id:3,
+           image:"apple.jpg",
+        },
+        {
+            id:4,
+           image:"cereal.jpg",
+        },
+        ];
+        let index=Math.round(Math.random()*4)
+        let str=`<img src="${products[index].image}">`
+        dImage.innerHTML=str
+        </script>
+
+</body>
+</html>

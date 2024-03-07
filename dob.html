@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Date of Birth</label>
+    <p id="p1"></p>
+    <br/>
+    <input type="date" id="t1">
+    <button onclick="f1()">submit</button>
+    <script>
+        const f1=() =>{
+        let str=new Date(t1.value);
+        let currentDate=new Date()
+        let age=currentDate.getFullYear()-str.getFullYear()
+        p1.innerHTML=`your age is ${age}`
+        }
+    </script>
+
+   
+</body>
+</html>

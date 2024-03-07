@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <input type="text" id="txtMovies">
+        <button onclick="addMovies()">add</button>
+    </p>
+    <div id="divMovies"></div>
+    <script>
+        let arrMovie=[]
+        const showMovies=()=>
+        {
+            txtMovies.value=""
+            let str=""
+            arrMovie.forEach((value,index)=>
+            {
+                str+=`<p>${value}<button onclick='deleteMovie(${movie})'>delete</button></p>`;
+            }); 
+            showMovies.innerHTML=str;
+        };
+        const addMovies=()=>
+        {
+            arrMovie.push(txtMovie.value)
+            showMovies();
+        }
+        const deleteMovie=(index)=>
+        {
+            delete arrMovie[index];
+            showMovies();
+        }
+    </script>
+</body>
+</html>

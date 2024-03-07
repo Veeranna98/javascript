@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+</head>
+<body>
+    <input type="text" id="t1" placeholder="Enter Name"><br><br>
+    <input type="text" id="t2" placeholder="Enter your age"><br><br>
+    <input type="button" onclick="myfunction()" value="submit">
+    <table id="t" border="1"></table>
+    <script>
+        function myfunction()
+        {
+            var row=t.insertRow();
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            cell1.innerHTML=t1.value;
+            cell2.innerHTML=t2.value;
+            document.body.append(t);
+        }
+    </script>
+</body>
+</html>

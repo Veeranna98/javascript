@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 140px;
+            height: 500px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="d" onclick="f1()">Hello world</div> -->
+    <!-- <div id="d" ondblclick="f1()">Hello world</div> -->
+    <!-- <div id="d" oncontextmenu="f1()">Hello world</div> -->
+    <!-- <div id="d" onmouseover="f1()">Hello world</div> -->
+    <div id="d" onmouseout="f1()">Hello world</div>
+    <div id="d" onmousemove="f1()">Hello| world</div>
+    <input type="text" id="t1">
+    <script>
+        function f1(){
+            t1.value="some event called";
+            console.log("hello")
+        }
+    </script>
+</body>
+</html>

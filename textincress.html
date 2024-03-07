@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Changer</title>
+    <style>
+        #output {
+            font-size: 16px; /* Initial font size */
+        }
+    </style>
+</head>
+<body>
+    <h1>Font Size Changer</h1>
+    <div id="output">Hello World</div>
+    <button onclick="increaseFontSize()">+</button>
+    <button onclick="decreaseFontSize()">-</button>
+
+   <script>
+    let fontSize = 16; // Initial font size
+
+function increaseFontSize() {
+    fontSize += 2; // Increase font size by 2 pixels
+    document.getElementById('output').style.fontSize = `${fontSize}px`;
+}
+
+function decreaseFontSize() {
+    fontSize -= 2; // Decrease font size by 2 pixels
+    document.getElementById('output').style.fontSize = `${fontSize}px`;
+}
+
+   </script>
+</body>
+</html>

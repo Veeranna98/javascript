@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dImage"></div>
+    <script>
+    let products=[
+    {id:1, name:"rice", image:"rice.jpg", price:40, cid:2},
+    {id:2, name:"carrot", image:"carrot.jpg", price:30, cid:2},
+    {id:3, name:"rice", image:"rice.jpg", price:100, cid:1},
+    {id:4, name:"carrot", image:"carrot.jpg", price:60, cid:1},
+    {id:5, name:"cereal", image:"cereal.jpg", price:40, cid:2},
+    {id:6, name:"broccoli", image:"broccoli.jpg", price:30, cid:2},
+    {id:7, name:"orange", image:"orange", price:100, cid:1},
+    {id:8, name:"rice", image:"rice.jpg", price:60, cid:1},
+    {id:9, name:"carrot", image:"carrot.jpg", price:40, cid:2},
+    {id:10, name:"rice", image:"rice.jpg", price:30, cid:2},
+   
+
+];
+doc=document.body
+doc.onkeydown=(e)=>
+{
+    if(e.key=="ArrowLeft")
+    {
+        let n=Math.round(Math.random()*10);
+        dImage.innerHTMl=`imgsrc='${products[n].image}'>`;
+    }
+}
+</script>
+</body>
+</html>

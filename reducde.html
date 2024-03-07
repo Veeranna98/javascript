@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let marks=[20,30,40,60,90];
+        let sum=marks.reduce((total, value)=>
+        {
+          return total +value;
+        
+    },0);
+    console.log(sum);
+    let cart =[{name: "apple", qulity:33},
+                {name: "mango", aulity: 44},
+        ];
+        let total=cart.reduce(sum,value)
+    </script>
+</body>
+</html>

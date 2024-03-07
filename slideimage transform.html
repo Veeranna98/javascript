@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .before{
+            position: fixed;
+            width: 300px;
+            height: 100%;
+            top: 0px;
+            left: 100%;
+            background-color: rgb(0, 255, 128);
+            transition: 0.3s;
+        }
+        .after{
+          left: calc(100% - 300px);
+        }
+        .main{
+            width: 300px;
+            height: 100%;
+            top: 0px;
+            left: 100px;
+            margin: auto;
+            background-color: aqua;
+            transition: 0.3s;
+        }
+        .trn{
+          transform: translateX(-100px);
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <div id="m" class="main">main</div>
+    <div id="d" class="before">Hello Bor I dont care
+    <p><button id="closebtn">close</button></p></div>
+    <script>
+        btn.onclick = ()=>
+        {
+            d.classList.add("after");
+            m.classList.add("trn")
+
+        }
+        closebtn.onclick =()=>
+        {
+            d.classList.remove("after");
+            m.classList.remove("trn");
+        }
+    </script>
+</body>
+</html>

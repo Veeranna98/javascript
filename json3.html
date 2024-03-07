@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <ul id="userDiv"></ul>
+    <script>
+        const showPosts=async(userId)=>{
+       const url="https://jsonplaceholder.typicode.com/posts/?userId=${userId}" ;
+        const showUser=async()=>
+        {
+            try{
+                const response=await fetch(url);
+                const json=await response.json();
+                let str=`<h3>posts of user Id: ${userId}</h3>`;
+                json.map((element)=>
+                {
+                   str+=`<p onclick='showPosts(${element.userId}'>${element.title}<br><br>${element.body}<hr></p>`;
+                    // let txt=showComments(element.id);
+                    str+=txt;
+                    console.log(str);
+
+                });
+                divContent.innerHTML=str;
+            }
+            catch(error)
+            {
+                console.log(error);
+            }
+        }
+    }
+    </script>
+</body>
+</html>

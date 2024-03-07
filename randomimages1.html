@@ -1,0 +1,196 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        .divProducts{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: 20px;
+            row-gap: 20px;
+            column-gap: 30px;
+            padding: 40px;
+        }
+        .divSides{
+            width: 200px;
+            border: solid 2px;
+            background-color: aqua;
+        }
+        .outer{
+            width: 200px;
+            margin: auto;
+        }
+        .before{
+            width: 150px;
+            transition: 2s;
+        }
+        .after{
+            width: 150px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outerr">
+        <h1 id="scorCard"></h1>
+        <div class="container"></div>
+        <div class="divSides"><h1>fruits</h1></div>
+        <div class="divProducts"></div>
+        <div class="divSides"><h1>vegetables</h1></div>
+
+    </div>
+    <div class="rules">
+        <h2>game rules</h2>
+        <h3>press left arrow if you see a fruit</h3>
+        <h3>press right arrow if you see  a vegetables</h3>
+    </div>
+
+    <script>
+        let divProducts=document.querySelector(".divProducts");
+
+        let products=[
+        {id:1, name:"rice", image:"rice.jpg", price:40, cid:2},
+        {id:2, name:"carrot", image:"carrot.jpg", price:30, cid:2},
+        {id:3, name:"rice", image:"rice.jpg", price:100, cid:1},
+        {id:4, name:"carrot", image:"carrot.jpg", price:60, cid:1},
+        {id:5, name:"cereal", image:"cereal.jpg", price:40, cid:2},
+        {id:6, name:"broccoli", image:"broccoli.jpg", price:30, cid:2},
+        {id:7, name:"orange", image:"orange", price:100, cid:1},
+        {id:8, name:"rice", image:"rice.jpg", price:60, cid:1},
+        {id:9, name:"carrot", image:"carrot.jpg", price:40, cid:2},
+        {id:10, name:"rice", image:"rice.jpg", price:30, cid:2},
+       
+    
+    ];
+   let cid=0;
+   let score=0;
+   let index=0;
+   const showProducts = ()=>
+   {
+    index=math.round(math.random()*10);
+    let txt=`<div>
+             <div id=divfruit' ><img width='200px' src=${products[index].image}></div>
+             <div>${products[index].name}</div>
+             </div>`;
+             divProducts.innerHTML=txt;
+
+   };
+ let d=document.body
+d.onkeydown=(e)=>
+{
+    cid=products[index].cid;
+    console.log(cid);
+
+    if(e.key=="ArrowLeft" && cid===0)
+    {
+        score++;
+
+    }
+    else if(e.key=="ArrowRight" && cid===1)
+    {
+       score++;
+    }
+   showCards.innerHTML="score: "+ score ;
+   showproducts();
+}
+showproducts()
+ </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        .divproducts{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            padding: 30px;
+        }
+        .divSides{
+            width: 200px;
+            border: solid 2px;
+            background-color: silver;
+        }
+        .outer{
+            width: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <h1 id="scoreCard"></h1>
+        <div class="container">
+            <div class="divside"><h1>Fruits</h1></div>
+            <div class="divproducts"></div>
+            <div class="divSide"><h1>vegetable</h1></div>
+        </div>
+        <div class="rule">
+            <h2>Game Rule:</h2>
+            <h3>press left arrow if you see a fruit</h3>
+            <h3>press right arrow if you see a vegetable</h3>
+        </div>
+    </div>
+    <script>
+        let divproducts = document.querySelector(".divproducts");
+    let products=[
+    {id:1, name:"Tomato", image:"tomato.jpeg", price:40, cid:2},
+    {id:2, name:"Cabbage", image:"capsicum.jpeg", price:30, cid:2},
+    {id:3, name:"Apple", image:"Apple.jpg", price:100, cid:1},
+    // {id:4, name:"Tomato", image:"orrange.jpg", price:60, cid:1},
+    // {id:5, name:"Tomato", image:"tomato.jpg", price:40, cid:2},
+    // {id:6, name:"Cabbage", image:"cabbage.jpg", price:30, cid:2},
+    // {id:7, name:"Apple", image:"Apple.jpg", price:100, cid:1},
+    // {id:8, name:"Tomato", image:"orrange.jpg", price:60, cid:1},
+    // {id:9, name:"Tomato", image:"tomato.jpg", price:40, cid:2},
+    // {id:10, name:"Cabbage", image:"cabbage.jpg", price:30, cid:2},
+   
+
+];
+let cid = 0;
+let score = 0;
+let index = 0;
+const showproduct = ()=>{
+    index = Math.round(Math.random()*9);
+    console.log(products[index].cid)
+    let txt =`<div>
+        <div id='divFruit' class ='before'<img width='150px' src=${products[index].img}></div>
+        <div>${pruduct[index].name}</div>
+        </div>`;
+        divproducts.innerHTMl=txt;
+};
+console.log(cid);
+doc=document.body
+doc.onkeydown=(e)=>
+{
+    if(e.key=="ArrowLeft")
+    {
+        let n=Math.round(Math.random()*10);
+        dImage.innerHTMl=imgsrc='${products[n].image}'>;
+    }
+}
+
+</script>
+</body>
+</html>

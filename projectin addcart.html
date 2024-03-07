@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;  
+            margin: auto;
+            width: 2000px;
+        }
+        div .container {
+            border: solid 1px pink;
+            height: 400px;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>website</h1>
+    <hr>
+    
+    <div id="products" class="main"></div>
+    <hr>
+    <div id= "r1"></div>
+    <h1>cart</h1>
+    <script>
+         listCards = []
+        
+        let product = [
+            {
+                name: "Apple",
+                description: "This is coffee.",
+                price: 4,
+                image: "star2.jpeg"
+            },
+            {
+                name: "Bannana",
+                description: "This is coffee apple.",
+                price: 5,
+                image: "star2.jpeg"
+            },
+            {
+                name: "mango",
+                description: "This is coffee soti.",
+                price: 6,
+                image: "star2.jpeg",
+            },
+            
+            {
+                name: "papaya",
+                description: "This is coffee-2.",
+                price: 9,
+                image: "star2.jpeg"
+            },
+           
+        ];
+        let msg = "";
+        product.forEach((value,key) => {
+            msg= msg + `<div class ='container'>
+                <div><img width=200px src=${value.image} > </div>
+                <div> ${value.name} </div>
+                <div>${value.description}</div>
+                    <div>${value.price}</div>
+                  <div>  <button id = "b${key}" onclick="addToCards(${key})"> add cart </button> </div>
+                            </div>`;
+        });
+   
+
+        products.innerHTML = msg;
+
+        function addToCards(key) {
+            if (listCards[key]==null) {
+                listCards[key] = product[key]
+                listCards[key].quantity = 1
+                listCards[key]= products[key];
+                listCards[key]=JSON.parse(JSON.stringify(products[key]));
+                 listCards[key].id=product[key].id;
+            }
+            else {
+                listCards[key].quantity = listCards[key].quantity + 1
+            }
+            
+            reloadCard() 
+            console.log(listCards);
+        }
+       
+
+        
+
+        function reloadCard() {
+            listCards.innerHTML = "";
+            listCards.forEach((value , key) => {
+                if (value !=null) {
+                  let newDiv = document.createElement("li");
+                  newDiv.innerHTML =`
+                  <div><img width=200px src=${value.image} > </div>
+                  <div> ${value.name} </div>
+                  <div>${value.price.toLocaleString()}</div>
+                  <div>
+                    <button onclick= "changeQuantity(${key},${value.quantity -1 })" > - </button>
+                        <div class = "count">${value.quantity}</div>
+                        <button onclick = "changeQuantity($ {key},${value.quantity +1})"> + </button>
+                        </div>`
+                        r1.appendChild(newDiv);
+
+
+                }
+            })
+        }
+
+        function changeQuantity(key , quantity) {
+            if (quantity == 0) {
+                delete listCards[key] ;
+            }
+            else {
+                listCards[key].quantity = quantity ;
+                listCards[key].price = quantity * products[key].price ;
+            }
+        }  
+
+    </script>
+</body>
+</html>

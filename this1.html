@@ -1,0 +1,133 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let person={
+        //     fristName:"nagavalli",
+        //     lastName:"veera",
+        //     age:23,
+        //     fullName:function()
+        //     {
+        //         return this.fristName+this.lastName;
+        //     }
+        // }
+        // console.log(person.fullName());
+        // console.log(person.fristName)
+    let person1=function(fristName,lastName,age)
+    {
+        this.fristName=fristName;
+        this.lastName=lastName;
+        this.age=age;
+        this.fullname=function()
+        {
+            return this.fristName+this.lastName;
+        }
+        
+    }
+    person1.prototype.nationality="Ameerpet";
+    let p=new person1("nagavalli", "veera", 23,"Ameerpet");
+    console.log(p.fullname());   
+    console.log(p.nationality);
+
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        #loginForm {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form id="form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div id="errorMessage" class="message">Login unsuccessful. Please check your credentials.</div>
+        <div id="successMessage" class="success-message">Login successful!</div>
+    </div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            var username = document.getElementById("username").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var errorMessage = document.getElementById("errorMessage");
+            var successMessage = document.getElementById("successMessage");
+
+            // Check if username and password are correct
+            if (username === "admin" && password === "password") {
+                errorMessage.style.display = "none";
+                successMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "block";
+                successMessage.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

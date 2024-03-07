@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="star2.jpeg" id="ball" style="width: 50px;" >
+    <script>
+        let i=0;
+        let b=document.body;
+        b.onkeydown=""
+        b.onkeyup=""
+        b.onkeypress=""
+        function handle(e)
+        {
+            ball.style.position="absolute"
+            if(e.key=="ArrowRight")
+            {
+                i=i+59;
+                ball.style.left=i+"px";
+            }
+        };   
+    </script>
+</body>
+</html>

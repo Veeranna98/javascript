@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            float: right;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 29px;
+            border-radius: 20px;
+            background-color: aquamarine;
+            border: 2px solid black;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            border-radius: 10px;
+
+        }
+        input[type="name"],
+        input[type="tel"],
+        input[type="email"],
+    button{
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid rgb(233, 21, 56);
+        border-radius: 5px;
+    }
+    button{
+        height: 10px;
+        width: 300px;
+        background-color: greenyellow;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    th,tr{
+        height:10px;
+        width:12px;
+        padding: 10px;
+        background-color: aqua;
+    }
+    .box{
+        border:2px solid red;
+        width: 300px;
+        height: 300px;
+        float: center;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+        <h1>New From</h1>
+        <from id="form">
+        
+            <label for="name">name</label>
+            <input type="name" id="name">
+            <br><br>
+            <label for="phone">Phone</label>
+            <input type="tel" id="Phone">
+            <br><br>
+            <label for="email">email</label>
+            <input type="email" id="email">
+            <br><br>
+            <input type="button" onclick="adduser()" value="ADD">
+        </from>
+        </center>
+    </div>
+    <div class="box" id="h1">
+        <h2>Data stroage box</h2>
+        <ul id="detailsList">
+            <table id="detailsTable">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>Phone</th>
+                        <th>email</th>
+                    </tr>
+                </thead>
+            </table>
+        </ul>
+    </div>
+    <script>
+        let userArray=[];
+        let userInput=document.getElementById("input");
+        const adduser=()=>
+        {
+            let userObj={};
+            userObj.name=userInput[0].value
+            userObj.phone=userInput[1].value
+            userObj.email=userInput[2].value
+            userArray.push(userObj);
+            showUsers();
+            document.getElementById("form").reset;
+        }
+
+     const showUsers=()=>
+        {
+            let str=`<table><thead><tr>
+                <th>name</th>
+                <th>phone</th>
+                <th>email</th>
+                </tr></thead></table>`;
+                userArray.forEach((Element,index)=>
+                {
+                    str=`<tr>
+                        <td>${Element.name}</td>
+                        <td>${Element.phone}</td>
+                        <td>${Element.email}</td>
+                        <td><i class="fa fa-edit" onclick='editUser(${index})'></i></td>
+                        <td><i class="fa fa-trash-o" onClick='deleteUser(${index})' ></i></td></tr>`;
+                });
+                str =str+`</table>`;
+          h1.innerHTML = str;
+          console.log(str);
+        }
+        const deleteUser=(index)=>
+        {
+            delete userArray[index];
+            document.getElementById("form").reset();
+            showUsers();
+        }
+        
+    </script>
+</body>
+</html>

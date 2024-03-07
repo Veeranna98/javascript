@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: row;
+        }
+        #main{
+            height: 700px;
+            width: 300px;
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <h1>My application</h1>
+    <hr>
+    <div id="container">
+        <div id="main"></div>
+        <div id =sub></div>
+    </div>
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/users/";
+        const showUsers = async () =>{
+                try{
+                const response = await fetch(url);
+                const json = await response.json();
+              
+                json.map((element) =>{
+                    let li = document.createElement("p");
+                    li.innerHTML = `<p onclick='showPosts(${element.id})'>${element.body}.${element.name}</p>`;
+                    main.append(li);
+                });
+            } catch(error){
+                console.log(error);
+            }
+        };
+
+        showUsers();
+
+        const showPosts = async(userId) =>{
+        const url = `https://jsonplaceholder.typicode.com/posts/?userId=${userId}`;
+            try{
+                const response = await fetch(url);
+                const json = await response.json();
+                let str =`<h2>Posts of user ID: ${userId}</h2>`
+                json.map((value) =>{
+                    str+= `<p><b>Title:</b>${value.title}<br><b>Body:</b>${value.body}<hr></p>`;
+                    console.log(str);
+                    // let li = document.createElement("p");
+                    // if (value.userId === element.id) {
+                    //     li.innerHTML = `${value.title} <br> ${value.body}
+                    // sub.append(li);
+                    // }
+                    sub.innerHTML= str;
+                });
+            } catch(error){
+                console.log(error);
+            }
+        };
+       showPosts();
+    </script>
+</body>
+</html>

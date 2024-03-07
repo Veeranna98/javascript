@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><input type="number" id="n1"></p>
+    <button onclick="sqr()">submit</button>
+    <hr>
+    <p id="p1"></p>
+    <script>
+        let sqr=()=>{
+            // let n=n1.value;
+            // let n=document.getElementById("n1").value;
+            let n=document.querySelector("#n1").value
+            p1.innerHTML=n*n;
+        };                        
+    </script>
+</body>
+</html>
