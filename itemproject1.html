@@ -1,45 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-         .container {
-            display: flex;
-            width: 1200px;
-            margin: auto;
-         }
-        .divmenu{
-            width: 150px;
-            padding: 30px;
-            line-height: 30px;
-            border-right: dashed 1px;
-            align-items: center;
+        .container {
+           display: flex;
+           width: 1200px;
+           margin: auto;
+        }
+       .divmenu{
+           width: 150px;
+           padding: 30px;
+           line-height: 30px;
+           border-right: dashed 1px;
+           align-items: center;
 
-        }
-        .divproducts{
-            display: flex;
-            flex-wrap: wrap;
-            row-gap: 20px;
-            column-gap: 40px;
-            padding: 30px;
+       }
+       .divproducts{
+           display: flex;
+           flex-wrap: wrap;
+           row-gap: 20px;
+           column-gap: 40px;
+           padding: 30px;
 
-        }
-        .divproduct{
-            width:300px;
-            text-align: center;
-        }
-   
-    </style>
+       }
+       .divproduct{
+           width:300px;
+           text-align: center;
+       }
+  
+   </style>
 </head>
 <body>
     <h1>My Store</h1>
     <hr>
     <div class="container">
-        <div class="divmenu"></div>
-        <div class="divproducts" ></div>
+        <div class="divMenu"></div>
+        <div class="divProducts"></div>
     </div>
-        <script> 
+    <script>
         let divmenu=document.querySelector(".divmenu");
         let divproducts=document.querySelector(".divproducts");
         let categories=[{id:0, name: "Show All"},
@@ -47,13 +48,14 @@
                {id:2, name:"vegetables"},
                {id:3, name:"Grains"},
             ];
-            let products=[
-                {id:1, name:"Tomato", image:"tomato.jpg", price:40, cid:2},
-                {id:1, name:"Cabbage", image:"pasta.jpg", price:30, cid:2},
-                {id:1, name:"Apple", image:"Apple.jpg", price:100, cid:1},
-                {id:1, name:"Tomato", image:"orange.jpg", price:60, cid:1},
-            ];
-            const showmenu=()=>{
+
+        let products=[{id:1 , name:"apple" ,image:"apple.jpg" ,price:23, cid:2},
+                      {id:1, name:"carrot", image:"carrot.jpg" , price:33, cid:2},
+                    {id:1, name:"cereal", image:"cereal.jpg",price:33, cid:1},
+                    {id:1, name:"Tomato", image:"tomato.jpg", price:40, cid:1}
+                ];
+
+                const showmenu=()=>{
                 let txt="";
                 categories.forEach((value)=>{ 
                     txt+=`
@@ -61,7 +63,7 @@
                 });
                 divmenu.innerHTML=txt;
             };
-            const showproducts=(id)=>{
+        const showproducts=(id)=>{
                 let txt="";
                 products.forEach((value)=>{
                     if(value.cid==id){
@@ -85,7 +87,8 @@
             }
             showmenu();
          
-         </script>
-    
+
+        }
+    </script>
 </body>
 </html>
